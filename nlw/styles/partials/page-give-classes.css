@@ -11,9 +11,9 @@
     background: var(--color-box-base);
     width: 100%;
     max-width: 74rem;
-    border-radius: 0.8rem;
+    border-radius: 0.8rem; /*arredondando bordas*/
     margin: -3.2rem auto 3.2rem;
-    padding-top: 6.4rem;
+    padding-top: 6.4rem; /*alteração de preenchimento*/
 }
 
 #page-give-classes main footer {

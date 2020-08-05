@@ -13,7 +13,7 @@
         
 
         <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
-
+        <script src="/scripts/addField.js" defer></script> <!--carrrega arquivo após executar o html-->
     </head>
     <body id="page-give-classes">
         <div id="container">
@@ -31,6 +31,7 @@
                 </div>
             </header>
 
+            <!--Forms de cadastro de professores-->
             <main>
                 <form action="" id="create-class">
                     <fieldset>
@@ -86,7 +87,7 @@
 
                     <fieldset id="schedule-items">
                         <legend>Horários disponíveis
-                            <button id="add-time">+ Novo Horários</button>
+                            <button type="button" id="add-time">+ Novo Horários</button>
                         </legend>
 
                         <div class="schedule-item">
@@ -116,32 +117,6 @@
                             </div>
                         </div>
 
-                        <div class="schedule-item">
-                            <div class="select-block">
-                                <label for="weekday">Dia da semana</label>
-                                <select name="weekday[]" required>
-                                    <option value="">Selecione uma opção</option>
-                                    <option value="0">Domingo</option>
-                                    <option value="1">Segunda-feira</option>
-                                    <option value="2">Terça-feira</option>
-                                    <option value="3">Quarta-feira</option>
-                                    <option value="4">Quinta-feira</option>
-                                    <option value="5">Sexta-feira</option>
-                                    <option value="6">Sábado</option>
-                                </select>
-                            </div>
-                       
-
-                            <div class="input-block">
-                                <label for="time_from">Das</label>
-                                <input name="time_from[]" type="time" required>
-                            </div>
-
-                            <div class="input-block">
-                                <label for="time_to">Até</label>
-                                <input name="time_to[]" type="time" required>
-                            </div>
-                        </div>
 
                     </fieldset>
                 </form>
