@@ -10,7 +10,7 @@ module.exports = async function(db, {proffyValue, classValue, classScheduleValue
             "${proffyValue.name}",
             "${proffyValue.avatar}",
             "${proffyValue.whatsapp}",
-            "${proffyValue.bio}"
+            '${proffyValue.bio}'
         );
     `)
 

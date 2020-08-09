@@ -9,9 +9,21 @@ function pageLanding(req, res){
 async function pageStudy(req, res){
     
     const filters = req.query
+    const db = await Database
+    
 
         if (!filters.subject || !filters.weekday || !filters.time){
-            return res.render("study.html", {filters, subjects, weekdays})
+            setHidden(filters)
+            const proffys = await db.all(`
+                SELECT classes.*, proffys.* FROM proffys JOIN classes 
+                ON (classes.proffy_id = proffys.id) WHERE classes.proffy_id = proffys.id
+            `)
+            if (proffys != ""){
+                setSubject(proffys)
+                return res.render("study.html", {proffys, filters, subjects, weekdays})
+            }else{
+                return res.render("study.html", {filters, subjects, weekdays})
+            }
         }
 
         const timeToMinutes =  convertHoursToMinutes(filters.time)
@@ -31,17 +43,30 @@ async function pageStudy(req, res){
             `
         
         try {
-            const db = await Database
             const proffys = await db.all(query)
-            proffys.map((proffy) => {
-                proffy.subject = getSubject(proffy.subject)
-                    
-            })
+            setSubject(proffys)
             return res.render("study.html", {proffys, filters, subjects, weekdays})
         } catch (error) {
             console.log(error)
  
         }
+}
+
+function setSubject(proffys){
+    proffys.map((proffy) => {
+        proffy.subject = getSubject(proffy.subject)
+            
+    })
+}
+
+function setHidden(filters){
+    if (!filters.subject){
+        filters.subject = -1
+    }
+    
+    if (!filters.weekday){
+        filters.weekday = -1
+    }
 }
 
 function pageGiveClasses(req, res){
