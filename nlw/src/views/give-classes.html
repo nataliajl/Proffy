@@ -83,28 +83,35 @@
                             <button type="button" id="add-time">+ Novo Horários</button>
                         </legend>
 
+                        
+                        
+
                         <div class="schedule-item">
-                            <div class="select-block">
-                                <label for="weekday">Dia da semana</label>
-                                <select name="weekday[]" required>
-                                    <option value="" hidden="">Selecione uma opção</option>
-                                    {%for weekday in weekdays%}
-                                        <option value="{{loop.index0}}">{{weekday}}</option> <!-- faz verificação de qual disciplina já foi selecionada no filtro anterior -->>
-                                    {%endfor%}
-                                </select>
-                            </div>
-                       
+                            <button type="button" id="remove-time" disabled hidden>- Remover</button>
+                            <div class="items">
+                                <div class="select-block">
+                                    <label for="weekday">Dia da semana</label>
+                                    <select name="weekday[]" required>
+                                        <option value="" hidden="">Selecione uma opção</option>
+                                        {%for weekday in weekdays%}
+                                            <option value="{{loop.index0}}">{{weekday}}</option> <!-- faz verificação de qual disciplina já foi selecionada no filtro anterior -->>
+                                        {%endfor%}
+                                    </select>
+                                </div>
+                        
 
-                            <div class="input-block">
-                                <label for="time_from">Das</label>
-                                <input name="time_from[]" type="time" required>
-                            </div>
+                                <div class="input-block">
+                                    <label for="time_from">Das</label>
+                                    <input name="time_from[]" type="time" required>
+                                </div>
 
-                            <div class="input-block">
-                                <label for="time_to">Até</label>
-                                <input name="time_to[]" type="time" required>
+                                <div class="input-block">
+                                    <label for="time_to">Até</label>
+                                    <input name="time_to[]" type="time" required>
+                                </div>
                             </div>
                         </div>
+
 
 
                     </fieldset>

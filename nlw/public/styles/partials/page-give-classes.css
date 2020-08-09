@@ -81,7 +81,8 @@
     border-bottom: 1px solid var(--color-line-in-white);
 }
 
-#page-give-classes fieldset legend button {
+#page-give-classes fieldset legend button,
+#page-give-classes fieldset .schedule-item button {
     background: none;
     border: 0;
 
@@ -94,7 +95,12 @@
     transition: 0.2s;
 }
 
-#page-give-classes fieldset legend button:hover{ /* botão sobe */
+#page-give-classes fieldset .schedule-item button {
+    float: right;
+}
+
+#page-give-classes fieldset legend button:hover,
+#page-give-classes fieldset .schedule-item button:hover{ /* botão sobe */
     transform: translateY(-5px);
     color: var(--color-primary-dark);
 }
@@ -131,9 +137,30 @@
 
     .schedule-item {
         display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr;
+
+        grid-template-areas: 
+        "null null button"
+        "schedule schedule schedule";
+    }
+
+    #page-give-classes fieldset .schedule-item button{
+        grid-area: button;
+        text-align: end;
+        align-self: center;
+        margin: 0;
+
+    }
+
+    #page-give-classes fieldset .items {
+        display: grid;
         grid-template-columns: 2fr 1fr 1fr;
+        grid-area: schedule;
         column-gap: 1.6rem;
     }
+
+
 
     #page-give-classes #schedule-items .input-block+.input-block,
     #page-give-classes #schedule-items .select-block+.input-block {
