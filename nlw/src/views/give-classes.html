@@ -66,7 +66,7 @@
                             <select name="subject" id="subject" required>
                                 <option value="" hidden="">Selecione uma opção</option>
                                 {%for subject in subjects%}
-                                    <option value="{{loop.index0}}">{{subject}}</option> <!-- faz verificação de qual disciplina já foi selecionada no filtro anterior -->>
+                                    <option value="{{loop.index}}">{{subject}}</option> <!-- faz verificação de qual disciplina já foi selecionada no filtro anterior -->>
                                 {%endfor%}
                             </select>
                         </div>

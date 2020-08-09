@@ -1,5 +1,6 @@
 const Database = require('./database/db.js')
 const { subjects, weekdays, getSubject, convertHoursToMinutes } = require('./utils/format.js') // desestruturar
+let queryString
 
 function pageLanding(req, res){
     return res.render("index.html")
@@ -33,11 +34,9 @@ async function pageStudy(req, res){
             const db = await Database
             const proffys = await db.all(query)
             proffys.map((proffy) => {
-                console.log(proffy.subject)
-                    proffy.subject = getSubject(proffy.subject)
+                proffy.subject = getSubject(proffy.subject)
                     
             })
-            console.log(proffys)
             return res.render("study.html", {proffys, filters, subjects, weekdays})
         } catch (error) {
             console.log(error)
@@ -47,6 +46,10 @@ async function pageStudy(req, res){
 
 function pageGiveClasses(req, res){
     return res.render("give-classes.html", {subjects, weekdays})
+}
+
+function pageSuccess(req, res){
+    return res.render("success.html")
 }
 
 async function saveClasses(req, res) {
@@ -82,14 +85,21 @@ async function saveClasses(req, res) {
     }
     
 
-    let queryString = "?subject=" + data.subject + "&weekday=" + data.weekday[0] + "&time=" + data.time_from[0]   
-    return res.redirect("/study" + queryString)
+    queryString = "?subject=" + data.subject + "&weekday=" + data.weekday[0] + "&time=" + data.time_from[0]   
+    // return res.redirect("/study" + queryString)
+    return res.redirect("/success")
     
+}
+
+function successToStudy(req, res) {
+    return res.redirect("/study" + queryString)
 }
 
 module.exports = {
     pageLanding,
     pageStudy,
     pageGiveClasses,
-    saveClasses
+    pageSuccess,
+    saveClasses,
+    successToStudy
 }

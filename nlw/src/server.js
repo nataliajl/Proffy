@@ -1,7 +1,7 @@
 // servidor
 const express = require('express')
 const server = express()
-const { pageLanding, pageStudy, pageGiveClasses, saveClasses } = require('./pages.js')
+const { pageLanding, pageStudy, pageGiveClasses, pageSuccess, saveClasses, successToStudy } = require('./pages.js')
 
 // configurações nunjucks
 const nunjucks = require('nunjucks')
@@ -16,7 +16,9 @@ server
 // chamando páginas da aplicação
 .get("/", pageLanding)
 .get("/study", pageStudy)
+.get("/success", pageSuccess)
 .get("/give-classes", pageGiveClasses)
+.get("/successToStudy", successToStudy)
 .post("/save-class", saveClasses)
 
 .listen(5500);

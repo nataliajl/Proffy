@@ -1,0 +1,112 @@
+#page-success {
+    background: var(--color-primary);
+    background-image: url("/images/success-background.svg");
+    
+}
+
+#page-success #container .success-box{
+	margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    
+}
+
+.success-box .text{
+    padding: 0rem;
+}
+
+.success-box strong {
+    font: 700 3.0rem Archivo;
+    line-height: 4.2rem;
+    color: var(--color-title-in-primary);
+    
+}
+
+.success-box p {
+    font-size: 1.4rem;
+    color: var(--color-text-in-primary);
+}
+
+.success-box img{
+    height: 8rem;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+
+#page-success #container .buttons-container a {
+    width: 15rem;
+    height: 4.9rem;
+
+    border-radius: 0.8rem;
+    margin-right: 1.6rem;
+
+    font: 700 1.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    transition: background 0.2s;
+
+    color: var(--color-button-text);
+    background: var(--color-secondary);
+    margin-right: 0;
+}
+
+
+#page-success #container .buttons-container a:hover { /* quando mouse estiver em cima*/
+    background: var(--color-secondary-dark);
+}
+
+#page-success #container .buttons-container a:active { /* quando mouse estiver em cima*/
+    
+}
+
+@media (min-width: 380px){
+    #page-success {
+        background-image: none;
+    }
+    #page-success #container{
+        padding: 5rem 9rem;
+        background-image: url("/images/success-background.svg");
+        background-size: cover;
+    }
+}
+
+@media (min-width: 1100px){
+
+    #page-success #container{
+        max-width: 1200px;
+        padding: 123px 0;
+    }
+
+    .success-box strong {
+        font-size: 4.2rem;
+        
+    }
+    
+    .success-box p {
+        font-size: 2rem;
+    }
+    
+    .success-box img{
+        height: 11.2rem;
+    }
+    
+    
+    #page-success #container .buttons-container a {
+        width: 25rem;
+        height: 8.1rem;
+        font-size: 2.3rem;
+    }
+    
+}

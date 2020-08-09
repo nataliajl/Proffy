@@ -1,6 +1,6 @@
 document.querySelector("#add-time").addEventListener('click', cloneFiel); // busca botão 'novo horario' e pega evento clique
 
-function cloneFiel() { // função de conagem do campo de horarios
+function cloneFiel() { // função de clonagem do campo de horarios
     
     const newFieldContainer = document.querySelector(".schedule-item").cloneNode(true); // pega div com a classe e clona a tag html
     const fields = newFieldContainer.querySelectorAll('input'); // pega campos tipo input de newFieldContainer e cria lista com elementos
