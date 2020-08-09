@@ -38,9 +38,11 @@
 }
 
 .page-header .header-content strong {
+    display: flex;
     font: 700 3.6rem Archivo;
     line-height: 4.2rem;
     color: var(--color-title-in-primary);
+    
 }
 
 .page-header .header-content p {
@@ -51,7 +53,7 @@
     margin-top: 2.4rem;
 }
 
-@media (min-width: 700px) {
+@media (min-width:700px) {
     .page-header {
         height: 340px;
     }
@@ -73,5 +75,6 @@
 
     .page-header .header-content strong {
         max-width: 350px;
+        
     }
 }

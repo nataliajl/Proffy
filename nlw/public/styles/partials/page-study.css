@@ -1,9 +1,3 @@
-.page-header .header-content strong {
-    position: absolute;
-    width: 5.2srem;
-    height: 5.2rem;
-}
-
 #page-study #container {
     width: 100vw;
     height: 100vh;
@@ -45,10 +39,16 @@
 }
 
 
-
 #page-study main {
     margin: 3.2rem auto;
     width: 90%;
+}
+
+#page-study main .no-results {
+    max-width: 30rem;
+    margin: 12rem auto;
+    text-align: center;
+    
 }
 
 .teacher-item {

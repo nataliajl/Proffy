@@ -16,6 +16,7 @@ module.exports = async function(db, {proffyValue, classValue, classScheduleValue
 
     const proffy_id = insertedProffy.lastID
 
+
     // inserir dados em classes
     const insertedClass = await db.run(`
         INSERT INTO classes (
